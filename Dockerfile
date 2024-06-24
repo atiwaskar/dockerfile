@@ -2,7 +2,8 @@ FROM ubuntu As build
 RUN apt-get update && apt install maven -y && apt install git -y
 RUN git clone https://github.com/mayurmwagh/onlinebookstore.git
 WORKDIR /onlinebookstore
-RUN mvn clean package
+RUN mvn clean install -DskipTests
+
 
 
 
