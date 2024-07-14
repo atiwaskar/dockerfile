@@ -5,6 +5,6 @@ RUN git clone https://github.com/Pritam-Khergade/student-ui.git
 WORKDIR /student-ui
 RUN mvn clean package
 FROM tomcat:alpine
-COPY --from=build /student-ui/target/*.war /webapps/student.war
+COPY --from=build /student-ui/target/*.war webapps/student.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
